@@ -49,6 +49,44 @@ After typing it in, you should now have opened a shell in the remote computer. Y
 
 ## Using SSH via VSCode
 
+VSCode can remember SSH server sessions and allow you to connect and move around in the remote machine using a more intuitive GUI approach. This is the way I would recommend as VSCode is already capable of being an IDE and so you can essentially use your development environment  almost as is, on other systems.
+
+The steps for setting up a new SSH server (i.e a computer you want to connect to) are as follows:
+
+### 0. Prerequisites
+
+You have to have the *Remote - SSH* extension for VSCode installed on the IDE. You can install it from the extensions tab on the main IDE.
+
+![VSCode extension](RemoteAccessToPCs_images\VSCode extension.png)
+
+
+
+### 1. Add a new SSH host
+
+- Press `ctrl + shift + P` to bring up the command menu and start typing "Connect to Host" and you should have the command to add a new host.![add_new_host](RemoteAccessToPCs_images/add_new_host.png)
+
+- From here, enter the host username and ip-address similar to how you would in the terminal.![confirming host](RemoteAccessToPCs_images/confirm new host.png)
+
+- You will also have to enter the password for that user here: ![entering password](RemoteAccessToPCs_images/entering password.png)
+- You will also have to mention what is the host platform. In most cases, this will be Linux
+
+![selecting host platform](RemoteAccessToPCs_images/selecting host platform.png)
+
+- After you do this, VSCode will try to connect to the host, if successful your VSCode window should have something like the following in the bottom of the screen. ![connection successful_bottom_half](RemoteAccessToPCs_images/connection successful_bottom_half.png)
+
+
+
+Now whenever you want to connect again to the same host, you can use the `Connect to Host` command and your previously added hosts should be available.![new host is present](RemoteAccessToPCs_images/new host is present.png)
+
+
+
+From the remote window in VSCode you can use the `ctrl+k ctrl+o` command to open up the navigation window to go to different folders. You can also upload and download files from remote through VSCode
+
+- To download : right click the file/folder -> select *download*
+- To Upload : You should be able to just drag and drop
+
+
+
 ## Using SSH via MobaXterm
 
 
