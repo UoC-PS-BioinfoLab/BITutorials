@@ -76,7 +76,7 @@ You have to have the *Remote - SSH* extension for VSCode installed on the IDE. Y
 
 
 
-- Now whenever you want to connect again to the same host, you can use the `Connect to Host` command and your previously added hosts should be available.  ![new host is present](RemoteAccessToPCs_images/new_host_is_present.png)
+- Now whenever you want to connect again to the same host, you can use the `Connect to Host` command and your previously added hosts should be available.   ![new host is present](RemoteAccessToPCs_images/new_host_is_present.png)
 
 
 
