@@ -92,17 +92,56 @@ From the remote window in VSCode you can use the `ctrl+k ctrl+o` command to open
 
 ## Using SSH via MobaXterm
 
+MobaXterm is a software you can use to connect to and interact with SSH servers and do several other things. 
+
+The software can be downloaded at https://mobaxterm.mobatek.net/download-home-edition.html (Download the installer edition)
+
+![UI](RemoteAccessToPCs_images/mobaxtermUI.png)
+
+Select the session button and from there select SSH. You will be given a window to enter the server IP and a username. Enter both and press okay to start the connection.
+
+![mxtermSession](C:\Users\weera\gitrepos\BITutorials\RemoteAccessToPCs_images\mxtermSession.png)
+
+You will be prompted whether you trust the computer (if this is the first time mobaxterm is connecting) and you can select yes. You would also be prompted to enter your password. When entered, you can have the program remember your passwords too but that requires setting a master password for mobaxterm too. 
+
+Within mobaxterm you can do most cli tasks. However since it isn't an IDE, you'll be coding using the terminal if you want to use it.
+
 
 
 ## Using ssh keys to avoid having to type passwords all the time
 
+If using the terminal or VSCode, if you want to ssh into a machine, you'll find that you have to enter your user password multiple times to do different tasks. A way around this is to create an rsa key pair on your system, and then add the relevant public key to the host and keep a location to your private key in the sshconfig file on your PC. Here I will cover how to do that
+
 ### ssh-keygen
+
+This is the software you will be using to create the keypairs. It is present by default on windows and LInux.
 
 ### The order to do things
 
 #### 1. Creating a key pair
 
+- Run `ssh-keygen` on a terminal and it will create a pair of files and prompt you to give a name to them. 
+- The files are in the form of `[filename]_rsa` and `[filename]_rsa.pub`.
+
+The former is *your* **private** key and the latter is the public key. The private key should **stay on your machine** and the public key is added to the ~/.ssh/ authorized_keys file of your user in the remote machine
+
 #### 2. Adding your public key to the authorized keys on remote
+
+- Send the public key to the remote machine from the machine it was created in using the `scp` command
+
+```bash
+scp [filename]_rsa.pub [username]@[ip]~:/.ssh/
+```
+
+From the remote machine:
+
+cd into the *.ssh* directory and append the contents of your public key file into the **authorized_keys** file:
+
+```bash
+cat [filename]_rsa.pub >> authorized_keys
+```
+
+If a previous *authorized_keys* file does not exist then rename your *[filename]_rsa.pub* file to *authorized_keys*
 
 #### 3. Configuring your sshconfig to use the private key when joining
 
