@@ -67,9 +67,7 @@ You have to have the *Remote - SSH* extension for VSCode installed on the IDE. Y
 
   ![add_new_host](RemoteAccessToPCs_images/add_new_host.png)
 
-- From here, enter the host username and ip-address similar to how you would in the terminal.
-
-![confirm_new_host](RemoteAccessToPCs_images/confirm_new_host.png)
+- From here, enter the host username and ip-address similar to how you would in the terminal.![confirm_new_host](RemoteAccessToPCs_images/confirm_new_host.png)
 
 - You will also have to enter the password for that user here: ![entering password](RemoteAccessToPCs_images/entering_password.png)
 - You will also have to mention what is the host platform. In most cases, this will be Linux
