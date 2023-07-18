@@ -100,7 +100,7 @@ The software can be downloaded at https://mobaxterm.mobatek.net/download-home-ed
 
 Select the session button and from there select SSH. You will be given a window to enter the server IP and a username. Enter both and press okay to start the connection.
 
-![mxtermSession](C:\Users\weera\gitrepos\BITutorials\RemoteAccessToPCs_images\mxtermSession.png)
+![mxtermSession](RemoteAccessToPCs_images/mxtermSession.png)
 
 You will be prompted whether you trust the computer (if this is the first time mobaxterm is connecting) and you can select yes. You would also be prompted to enter your password. When entered, you can have the program remember your passwords too but that requires setting a master password for mobaxterm too. 
 
