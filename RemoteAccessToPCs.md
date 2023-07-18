@@ -110,7 +110,7 @@ Within mobaxterm you can do most cli tasks. However since it isn't an IDE, you'l
 
 ## Using ssh keys to avoid having to type passwords all the time
 
-If using the terminal or VSCode, if you want to ssh into a machine, you'll find that you have to enter your user password multiple times to do different tasks. A way around this is to create an rsa key pair on your system, and then add the relevant public key to the host and keep a location to your private key in the sshconfig file on your PC. Here I will cover how to do that
+If using the terminal or VSCode, if you want to ssh into a machine, you'll find that you have to enter your user password multiple times to do different tasks. A way around this is to create an rsa key pair on your system, and then add the relevant public key to the host and keep a location to your private key in the ssh config file on your PC. Here I will cover how to do that
 
 ### ssh-keygen
 
@@ -143,7 +143,27 @@ cat [filename]_rsa.pub >> authorized_keys
 
 If a previous *authorized_keys* file does not exist then rename your *[filename]_rsa.pub* file to *authorized_keys*
 
-#### 3. Configuring your sshconfig to use the private key when joining
+#### 3. Configuring your ssh config file to use the private key when joining
+
+Now that the public key of the key-pair is in the host computer, open up your `sshconfig` file (this is usually located in `/[username]/.ssh/config`) and make the following changes:
+
+1. Find the host entry that corresponds to the computer you are configuring (it should be in the format *Host : [ip-address]*) 
+2. Add the following lines to the host entry so that the final entry looks as follows
+
+```json
+Host [ip-address]
+	HostName [ip-address]
+	User [HostUsername]
+	Port 22
+	PreferredAuthentications publickey
+	IdentityFile [path/to/rsa/key] e.g: "/Users/[currentUsername]/.ssh/id_rsa"
+```
+
+
+
+You should be all set to go after that. Try connecting to the remote computer via the terminal or VSCode as mentioned above and you should be in without needing to type the password. 
+
+**Note**: if you get a request denied because of an error with the keys, you can remove the last two lines of the config entry mentioned above and then log back in using your password. This issue is usually because the public key wasn't properly added to the *authorized_keys* file or your ssh can't find your private key. 
 
 
 
