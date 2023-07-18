@@ -65,18 +65,18 @@ You have to have the *Remote - SSH* extension for VSCode installed on the IDE. Y
 
 - Press `ctrl + shift + P` to bring up the command menu and start typing "Connect to Host" and you should have the command to add a new host.![add_new_host](RemoteAccessToPCs_images/add_new_host.png)
 
-- From here, enter the host username and ip-address similar to how you would in the terminal.![confirming host](RemoteAccessToPCs_images/confirm new host.png)
+- From here, enter the host username and ip-address similar to how you would in the terminal.![confirming host](RemoteAccessToPCs_images/confirm_new_host.png)
 
-- You will also have to enter the password for that user here: ![entering password](RemoteAccessToPCs_images/entering password.png)
+- You will also have to enter the password for that user here: ![entering password](RemoteAccessToPCs_images/entering_password.png)
 - You will also have to mention what is the host platform. In most cases, this will be Linux
 
-![selecting host platform](RemoteAccessToPCs_images/selecting host platform.png)
+![selecting host platform](RemoteAccessToPCs_images/selecting_host_platform.png)
 
-- After you do this, VSCode will try to connect to the host, if successful your VSCode window should have something like the following in the bottom of the screen. ![connection successful_bottom_half](RemoteAccessToPCs_images/connection successful_bottom_half.png)
+- After you do this, VSCode will try to connect to the host, if successful your VSCode window should have something like the following in the bottom of the screen. ![connection successful_bottom_half](RemoteAccessToPCs_images/connection_successful_bottom_half.png)
 
 
 
-Now whenever you want to connect again to the same host, you can use the `Connect to Host` command and your previously added hosts should be available.![new host is present](RemoteAccessToPCs_images/new host is present.png)
+Now whenever you want to connect again to the same host, you can use the `Connect to Host` command and your previously added hosts should be available.![new host is present](RemoteAccessToPCs_images/new_host_is_present.png)
 
 
 
